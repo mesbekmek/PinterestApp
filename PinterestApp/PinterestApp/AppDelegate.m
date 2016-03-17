@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import <PinterestSDK/PinterestSDK.h>
 
 @interface AppDelegate ()
 
@@ -16,7 +17,9 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    
+    [PDKClient configureSharedInstanceWithAppId:@"4823984880241099648"];
+    
     return YES;
 }
 
@@ -40,6 +43,12 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+#pragma mark - PDK Auth Callback method
+- (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<NSString *,id> *)options
+{
+    return [[PDKClient sharedInstance] handleCallbackURL:url];
 }
 
 @end
