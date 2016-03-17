@@ -14,6 +14,7 @@
 		18D6016F1C9B44630085227C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18D6016D1C9B44630085227C /* LaunchScreen.storyboard */; };
 		18D6017A1C9B44650085227C /* PinterestAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D601791C9B44650085227C /* PinterestAppTests.swift */; };
 		18D601851C9B44660085227C /* PinterestAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D601841C9B44660085227C /* PinterestAppUITests.swift */; };
+		A0C384B10C5B312E0B88268B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D37E92166297DE65F151EBAA /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,9 @@
 		18D601801C9B44650085227C /* PinterestAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PinterestAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		18D601841C9B44660085227C /* PinterestAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinterestAppUITests.swift; sourceTree = "<group>"; };
 		18D601861C9B44660085227C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6635E0CDF2EF46C1C82EEF8B /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		A99BAE918721467A0B0061E2 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		D37E92166297DE65F151EBAA /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A0C384B10C5B312E0B88268B /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +86,8 @@
 				18D601781C9B44650085227C /* PinterestAppTests */,
 				18D601831C9B44660085227C /* PinterestAppUITests */,
 				18D601621C9B44620085227C /* Products */,
+				D23506C974981BC42B047300 /* Pods */,
+				DE7A34A20544B6DB7903EBEA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -125,6 +132,23 @@
 			path = PinterestAppUITests;
 			sourceTree = "<group>";
 		};
+		D23506C974981BC42B047300 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6635E0CDF2EF46C1C82EEF8B /* Pods.debug.xcconfig */,
+				A99BAE918721467A0B0061E2 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		DE7A34A20544B6DB7903EBEA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D37E92166297DE65F151EBAA /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -132,9 +156,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 18D601891C9B44660085227C /* Build configuration list for PBXNativeTarget "PinterestApp" */;
 			buildPhases = (
+				F5EFDAAEA10DD6AB0B113935 /* Check Pods Manifest.lock */,
 				18D6015D1C9B44620085227C /* Sources */,
 				18D6015E1C9B44620085227C /* Frameworks */,
 				18D6015F1C9B44620085227C /* Resources */,
+				C609F08E98FDFC82721EB364 /* Embed Pods Frameworks */,
+				FCB724D4AB1F307F2B13219E /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -250,6 +277,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		C609F08E98FDFC82721EB364 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F5EFDAAEA10DD6AB0B113935 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		FCB724D4AB1F307F2B13219E /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		18D6015D1C9B44620085227C /* Sources */ = {
@@ -397,6 +472,7 @@
 		};
 		18D6018A1C9B44660085227C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6635E0CDF2EF46C1C82EEF8B /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = PinterestApp/Info.plist;
@@ -408,6 +484,7 @@
 		};
 		18D6018B1C9B44660085227C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A99BAE918721467A0B0061E2 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = PinterestApp/Info.plist;
@@ -484,6 +561,7 @@
 				18D6018B1C9B44660085227C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		18D6018C1C9B44660085227C /* Build configuration list for PBXNativeTarget "PinterestAppTests" */ = {
 			isa = XCConfigurationList;
@@ -492,6 +570,7 @@
 				18D6018E1C9B44660085227C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		18D6018F1C9B44660085227C /* Build configuration list for PBXNativeTarget "PinterestAppUITests" */ = {
 			isa = XCConfigurationList;
@@ -500,6 +579,7 @@
 				18D601911C9B44660085227C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
