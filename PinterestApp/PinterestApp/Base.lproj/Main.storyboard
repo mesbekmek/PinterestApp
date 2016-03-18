@@ -24,13 +24,46 @@
                                     <action selector="authenticateButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Tzj-o5-aLU"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MAT-0K-SVU">
+                                <rect key="frame" x="268" y="520" width="64" height="30"/>
+                                <state key="normal" title="Get Likes"/>
+                                <connections>
+                                    <action selector="getLikesButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YwR-E1-wqT"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="P2e-aZ-dYY">
+                                <rect key="frame" x="200" y="40" width="200" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="MD3-Ba-gdc"/>
+                                    <constraint firstAttribute="width" constant="200" id="UCD-yj-WQa"/>
+                                    <constraint firstAttribute="height" constant="100" id="pa9-2W-qOz"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="200" id="rCE-yB-o2Q"/>
+                                    <constraint firstAttribute="height" constant="200" id="rgF-Kd-dZL"/>
+                                    <constraint firstAttribute="width" constant="100" id="vQh-7l-XTb"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="MD3-Ba-gdc"/>
+                                        <exclude reference="pa9-2W-qOz"/>
+                                        <exclude reference="rCE-yB-o2Q"/>
+                                        <exclude reference="vQh-7l-XTb"/>
+                                    </mask>
+                                </variation>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="P2e-aZ-dYY" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="38N-ey-ThA"/>
+                            <constraint firstItem="MAT-0K-SVU" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Qx9-sN-g6d"/>
+                            <constraint firstItem="P2e-aZ-dYY" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="UTn-bg-rLm"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="MAT-0K-SVU" secondAttribute="bottom" constant="50" id="cxR-Ox-7PD"/>
                             <constraint firstItem="mGS-Ta-XCL" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hL8-9d-6Is"/>
                             <constraint firstItem="mGS-Ta-XCL" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="vVh-9p-Unx"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="likedImageView" destination="P2e-aZ-dYY" id="c4l-FA-8nd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
