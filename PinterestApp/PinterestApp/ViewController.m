@@ -7,6 +7,8 @@
 //
 
 #import "ViewController.h"
+#import "PDKUser.h"
+#import <PinterestSDK/PinterestSDK.h>
 
 @interface ViewController ()
 
@@ -18,9 +20,21 @@
     [super viewDidLoad];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+
+- (IBAction)authenticateButtonTapped:(UIButton *)sender {
+    [[PDKClient sharedInstance] authenticateWithPermissions:@[PDKClientReadPublicPermissions,
+                                                              PDKClientWritePublicPermissions,
+                                                              PDKClientReadPrivatePermissions,
+                                                              PDKClientWritePrivatePermissions,
+                                                              PDKClientReadRelationshipsPermissions,
+                                                              PDKClientWriteRelationshipsPermissions]
+                                                withSuccess:^(PDKResponseObject *responseObject)
+    {
+        PDKUser *user = [responseObject user];
+        NSLog(@"%@ authenticated!", user.firstName);
+    } andFailure:^(NSError *error) {
+        NSLog(@"authentication failed: %@", error);
+    }];
 }
 
 @end
